@@ -70,7 +70,7 @@ module.exports = function(grunt) {
       
       css: {
         files: ['_assets/sass/**/*', '_assets/js/**/*', '*.html', '_layouts/*.html', '_includes/*.html'],
-        tasks: ['clean:sitejs', 'compass', 'concat',  'uglify','copy:jsfiles','exec:build', 'clean:tempfolders'],
+        tasks: ['clean:sitejs', 'compass', 'concat',  'uglify','copy:jsfiles','exec:build'],
         options: {
           livereload: true,
           atBegin: true
@@ -185,7 +185,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('runtests', ['jshint']);
   
-  grunt.registerTask('build',    ['cleanup', 'compass', 'concat', 'jshint', 'uglify','copy:jsfiles','exec:build', 'clean:tempfolders']);
+  grunt.registerTask('build',    ['cleanup', 'compass', 'concat', 'jshint', 'uglify','copy:jsfiles','exec:build']);
 
   grunt.registerTask('serve',    ['exec:server']);
 
