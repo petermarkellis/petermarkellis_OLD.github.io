@@ -1,0 +1,67 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,700,300);
+
+$default-text-color:		#313131;
+
+$base-font-family: 			'Merriweather', Georgia, serif;
+$base-font-color: 			$default-text-color;
+$base-font-weight: 			normal;
+$base-line-height: 			1.6;
+$base-font-size: 			100%;
+$base-text-align:			left;
+
+
+/* Headings */
+
+$heading-text-color:		lighten($default-text-color, 20%);
+$heading-font-family:  		"PT Sans",Helvetica,Arial,sans-serif;
+$heading-font-weight: 		400; 
+$heading-letter-spacing: 	-0.025rem;
+$heading-line-height: 		1.25rem;
+
+
+
+
+
+h1, h2, h3, h4, h5, h6 
+{ 
+	font-family: $heading-font-family; 
+	font-weight: $heading-font-weight; 
+	line-height: $heading-line-height;
+    text-rendering: optimizelegibility;
+    letter-spacing: $heading-letter-spacing;
+    margin-bottom: 2rem;
+}
+
+h1 { font-size: 220%; letter-spacing: -2px; }
+h2 { font-size: 190%; letter-spacing: -1px; }
+h3 { font-size: 160%; }
+h4 { font-size: 140%; }
+h5 { font-size: 130%; }
+
+
+
+.italic { font-style: italic; }
+.bold   { font-weight: 700; }
+
+.block-margins { margin: 1em 0; }
+
+.unordered-list { list-style-type: disc; }
+.ordered-list { list-style: decimal; }
+
+
+p{
+	font-family: $base-font-family; 
+	text-align: justiy;
+	margin-bottom: 2rem;
+}
+
+
+a, a:visited{
+	text-decoration: none;
+	color: $heading-text-color;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}

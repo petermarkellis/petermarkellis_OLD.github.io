@@ -1,0 +1,14 @@
+name:        Your New Jekyll Site
+markdown:    redcarpet
+pygments:    true
+show_drafts: nil
+permalink:   /:categories/:title
+host:        127.0.0.1
+port:        4000
+baseurl:     /
+#paginate:    3
+url:         http://blog.petermarkellis.com
+timezone:    Europe/London
+show_drafts: nil
+exclude:     ['node_modules', '*.sql', '.sass-cache', 'gruntfile.js', 'package.json', '*.scss']
+keep_files:	 ['css', 'javascript']
