@@ -1,8 +1,66 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+//@import "base/config";
 @import "base/typography";
+//@import "base/utilities";
+
 
 body 
 { 
-	color: red;
-	color: blue;
-	color: green;
+	background: white; 
+	font-family: $base-font-family; 
+	font-weight: $base-font-weight; 
+	line-height: $base-line-height; 
+	color: $base-font-color;
+	text-align: $base-text-align;
 }
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 38rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 20px auto;
+}
+
+.posts{
+	margin-top: 100px;
+}
+
+
+.infinite-spinner {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #333;
+  margin: 60px auto;
+  
+  -webkit-animation: scaleout 1.0s infinite ease-in-out;
+  animation: scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes scaleout {
+  0% { -webkit-transform: scale(0.0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes scaleout {
+  0% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 100% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+

@@ -2,9 +2,7 @@
 layout: none
 ---
 {
-  "posts" : [
     {% for post in site.posts %}
-    "{{ post.url }}"{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ]
+     "{{ post.title }}" : "{{ post.url }}"{% unless forloop.last %},{% endunless %}
+    {% endfor %} 
 }

@@ -15,7 +15,8 @@ module.exports = function(grunt) {
     // The clean task ensures the entire XXX folder is removed
     clean:  {
       development: ["_site", "javascript", "css"],
-      tempfolders: ["javascript", "css"]
+      tempfolders: ["javascript", "css"],
+      sitejs: ["_site/javascript"],
     },
 
 
@@ -66,8 +67,15 @@ module.exports = function(grunt) {
     },
 
     watch: {
-        files: ['<%= jshint.files %>', '_assets/sass/*.scss'],
-        tasks: ['concat', 'uglify', 'jshint', 'compass']
+      
+      css: {
+        files: ['_assets/sass/**/*', '_assets/js/**/*', '*.html', '_layouts/*.html', '_includes/*.html'],
+        tasks: ['clean:sitejs', 'compass', 'concat',  'uglify','copy:jsfiles','exec:build', 'clean:tempfolders'],
+        options: {
+          livereload: true,
+          atBegin: true
+        }
+      }
     },
 
     /*shell: {
@@ -133,7 +141,21 @@ module.exports = function(grunt) {
                 }
 
             ]
+        },
+        cssfiles: {
+            files: [
+                {
+                    expand: true,
+                    flatten: true,
+                    src: ['css/*.css'],
+                    dest: '_site/css'
+                }
+
+            ]
         }
+    
+
+
     },
 
 
@@ -166,6 +188,8 @@ module.exports = function(grunt) {
   grunt.registerTask('build',    ['cleanup', 'compass', 'concat', 'jshint', 'uglify','copy:jsfiles','exec:build', 'clean:tempfolders']);
 
   grunt.registerTask('serve',    ['exec:server']);
+
+  
 
 
 
